@@ -31,18 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutomaticForm));
             buttonManualForm = new Button();
             textBoxTVDBLink = new TextBox();
-            textBox1 = new TextBox();
+            textBoxFilePath = new TextBox();
             buttonCheckResults = new Button();
             listBoxExamples = new ListBox();
+            buttonApplyResults = new Button();
             SuspendLayout();
             // 
             // buttonManualForm
             // 
             buttonManualForm.BackColor = Color.FromArgb(255, 190, 40);
-            buttonManualForm.Font = new Font("Courier New", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonManualForm.Location = new Point(443, 393);
+            buttonManualForm.Font = new Font("Courier New", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonManualForm.Location = new Point(599, 286);
             buttonManualForm.Name = "buttonManualForm";
-            buttonManualForm.Size = new Size(257, 120);
+            buttonManualForm.Size = new Size(124, 60);
             buttonManualForm.TabIndex = 7;
             buttonManualForm.Text = "Manual";
             buttonManualForm.UseVisualStyleBackColor = false;
@@ -55,26 +56,26 @@
             textBoxTVDBLink.Location = new Point(12, 12);
             textBoxTVDBLink.Name = "textBoxTVDBLink";
             textBoxTVDBLink.PlaceholderText = "TVDB Season Link?";
-            textBoxTVDBLink.Size = new Size(711, 38);
+            textBoxTVDBLink.Size = new Size(581, 38);
             textBoxTVDBLink.TabIndex = 8;
             // 
-            // textBox1
+            // textBoxFilePath
             // 
-            textBox1.BackColor = Color.FromArgb(250, 210, 37);
-            textBox1.Font = new Font("Courier New", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(12, 56);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Show Name?";
-            textBox1.Size = new Size(711, 38);
-            textBox1.TabIndex = 9;
+            textBoxFilePath.BackColor = Color.FromArgb(250, 210, 37);
+            textBoxFilePath.Font = new Font("Courier New", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxFilePath.Location = new Point(12, 56);
+            textBoxFilePath.Name = "textBoxFilePath";
+            textBoxFilePath.PlaceholderText = "Season File Path?";
+            textBoxFilePath.Size = new Size(581, 38);
+            textBoxFilePath.TabIndex = 9;
             // 
             // buttonCheckResults
             // 
             buttonCheckResults.BackColor = Color.FromArgb(255, 190, 40);
-            buttonCheckResults.Font = new Font("Courier New", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonCheckResults.Location = new Point(28, 393);
+            buttonCheckResults.Font = new Font("Courier New", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonCheckResults.Location = new Point(599, 12);
             buttonCheckResults.Name = "buttonCheckResults";
-            buttonCheckResults.Size = new Size(266, 120);
+            buttonCheckResults.Size = new Size(124, 82);
             buttonCheckResults.TabIndex = 10;
             buttonCheckResults.Text = "Check Results";
             buttonCheckResults.UseVisualStyleBackColor = false;
@@ -82,24 +83,37 @@
             // 
             // listBoxExamples
             // 
-            listBoxExamples.BackColor = Color.FromArgb(250, 210, 37);
+            listBoxExamples.BackColor = SystemColors.Control;
             listBoxExamples.Font = new Font("Courier New", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBoxExamples.FormattingEnabled = true;
             listBoxExamples.HorizontalScrollbar = true;
             listBoxExamples.Location = new Point(12, 100);
             listBoxExamples.Name = "listBoxExamples";
-            listBoxExamples.Size = new Size(711, 244);
+            listBoxExamples.Size = new Size(711, 180);
             listBoxExamples.TabIndex = 11;
+            // 
+            // buttonApplyResults
+            // 
+            buttonApplyResults.BackColor = Color.FromArgb(255, 190, 40);
+            buttonApplyResults.Font = new Font("Courier New", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonApplyResults.Location = new Point(12, 286);
+            buttonApplyResults.Name = "buttonApplyResults";
+            buttonApplyResults.Size = new Size(581, 60);
+            buttonApplyResults.TabIndex = 12;
+            buttonApplyResults.Text = "Apply Results";
+            buttonApplyResults.UseVisualStyleBackColor = false;
+            buttonApplyResults.Click += buttonApplyResults_Click;
             // 
             // AutomaticForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(27, 27, 27);
-            ClientSize = new Size(735, 559);
+            ClientSize = new Size(735, 356);
+            Controls.Add(buttonApplyResults);
             Controls.Add(listBoxExamples);
             Controls.Add(buttonCheckResults);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxFilePath);
             Controls.Add(textBoxTVDBLink);
             Controls.Add(buttonManualForm);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -115,8 +129,9 @@
         #endregion
         private Button buttonManualForm;
         private TextBox textBoxTVDBLink;
-        private TextBox textBox1;
+        private TextBox textBoxFilePath;
         private Button buttonCheckResults;
         private ListBox listBoxExamples;
+        private Button buttonApplyResults;
     }
 }
