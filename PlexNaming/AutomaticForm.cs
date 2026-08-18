@@ -2,9 +2,9 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace PlexNaming
 {
-    public partial class Form1 : Form
+    public partial class AutomaticForm : Form
     {
-        public Form1()
+        public AutomaticForm()
         {
             InitializeComponent();
         }
