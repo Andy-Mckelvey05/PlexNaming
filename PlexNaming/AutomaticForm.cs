@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace PlexNaming
@@ -20,8 +21,24 @@ namespace PlexNaming
                 .Where(file => extensions.Contains(
                     Path.GetExtension(file),
                     StringComparer.OrdinalIgnoreCase))
-                .OrderBy(file => Path.GetFileName(file), StringComparer.OrdinalIgnoreCase)
+                .OrderBy(file => NaturalSortKey(Path.GetFileName(file)))
                 .ToList();
+        }
+
+        private string NaturalSortKey(string fileName)
+        {
+            return Regex.Replace(
+                fileName,
+                @"\d+",
+                match =>
+                {
+                    if (int.TryParse(match.Value, out int number))
+                    {
+                        return number.ToString("D3");
+                    }
+
+                    return match.Value;
+                });
         }
 
         private string RemoveInvalidFileNameCharacters(string input)
