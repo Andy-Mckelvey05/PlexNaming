@@ -1,5 +1,4 @@
 using System.Text.RegularExpressions;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace PlexNaming
 {
@@ -118,7 +117,8 @@ namespace PlexNaming
                     string newFilePath = Path.Combine(folder, formattedName);
 
                     renameResults.Add(oldFile, newFilePath);
-                    listBoxExamples.Items.Add($"{oldFileName}\t->  {formattedName}");
+                    int maxFileNameLength = videoFiles.Max(file => Path.GetFileName(file).Length);
+                    listBoxExamples.Items.Add($"{oldFileName.PadRight(maxFileNameLength)}  ->  {formattedName}");
                 }
                 buttonApplyResults.Enabled = true;
             }
