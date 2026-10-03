@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>PlexNaming.ico</ApplicationIcon>
+    <ApplicationIcon>PlexTV.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="PlexNaming.ico" />
+    <Content Include="PlexTV.ico" />
   </ItemGroup>
 
   <ItemGroup>
